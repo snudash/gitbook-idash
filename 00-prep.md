@@ -11,9 +11,9 @@
 
 
 
-### 참고자료
+## 참고자료
 
-#### Web Technology
+### Web Technology
 
 * [웹](https://ko.wikipedia.org/wiki/월드_와이드_웹)
 * [웹 어플리케이션](https://ko.wikipedia.org/wiki/웹_애플리케이션)
@@ -28,7 +28,7 @@
 * [클라이언트 프로그램](https://ko.wikipedia.org/wiki/클라이언트_%28컴퓨팅%29)
 * [클라이턴트 프로그래밍](https://opentutorials.org/course/668)
 
-#### Web Standards
+### Web Standards
 
 * Google Chrome 설치. 구글 크롬을 사용하는 이유? \(웹 표준\)
 * [Web standards](https://www.w3.org/standards/)
@@ -38,7 +38,7 @@
 * CSS3 - W3C 권고안 개발 중
 * JavaScript - [ECMA 표준](https://en.wikipedia.org/wiki/ECMAScript)
 
-#### JavaScript
+### JavaScript
 
 * [Programming Language Ranking](https://www.benfrederickson.com/ranking-programming-languages-by-github-users/)
 * [Popularity of Programming Language](http://pypl.github.io/)
@@ -48,12 +48,12 @@
 * [실행방법과 실습 환경](https://opentutorials.org/course/743/4646)
 * [An Introduction to JavaScript](https://javascript.info/intro)
 
-#### Text Editors
+### Text Editors
 
 * [JavaScript Code Editors](https://javascript.info/code-editors)
 * [Best Code Editors](https://www.creativebloq.com/advice/5-top-code-editors-for-programmers)
 
-#### Node
+### Node
 
 * [Node.js](https://nodejs.org/ko/)
 
