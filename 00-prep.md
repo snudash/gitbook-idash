@@ -7,7 +7,7 @@
 
 구글 크롬 웹브라우저를 설치했다면 메뉴에서 개발자 도구\(Developer Tools\)를 찾아 실행해 보세요. 옆에 창이 뜰 것입니다. 개발자 도구 상단에 있는 바에서 콘솔\(Console\)을 선택하세요. 프롬프트\(`>`\)가 뜨고 커서가 깜빡이는 것을 보실 수 있을 것입니다. 프롬프트 옆에 자바스크립트 명령을 쓸 수 있습니다. 간단한 사칙연산 계산을 `+`, `-`, `*`, `/`를 이용해서 할 수 있습니다. 괄호 `()`를 이용하여 먼저 계산할 부분을 나타낼 수도 있습니다. 식을 입력하고 엔터를 치면 결과가 출력됩니다.
 
-![Google Chrome Developer Tools](.gitbook/assets/google-chrome-developper-tools-console%20%281%29.png)
+![Google Chrome Developer Tools](.gitbook/assets/google-chrome-developper-tools-console.png)
 
 ## 참고자료
 
