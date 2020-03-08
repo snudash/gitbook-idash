@@ -20,14 +20,14 @@
 
 여러분 노트북에 리눅스를 직접 설치했거나 가상머신에 설치했다면 리눅스를 부팅해서 터미널 앱을 열면 셸 명령을 내릴 수 있습니다. macOS에서도 Terminal.app을 열어 셸을 사용하면 됩니다. MS Windows의 경우에 WSL, Cygwin, GitBash 등이 설치되었다면 역시 각각의 터미널 프로그램을 열어 셸을 사용할 수 있습니다.
 
-구글 클라우드에 만든 Compute Engine 가상머신처럼 컴퓨터가 여러분 앞에 있는 것이 아니라면 원격으로 접속해야 합니다. 구글 클라우드 웹 페이지의 VM 목록에서 SSH 버튼을 클릭하여 접속하는 것은 이미 해 보았습니다. SSH는 Secure Shell의 약자입니다. 보안이 있는 셸이라는 뜻입니다. SSH는 23번 포터로 접속하여 원격 컴퓨터에 있는 셸을 사용할 수 있게 해 줍니다. SSH, SFTP, 포트 등에 대해 알고 싶다면 다음을 참조해 보세요.
+구글 클라우드에 만든 Compute Engine 가상머신처럼 컴퓨터가 여러분 앞에 있는 것이 아니라면 원격으로 접속해야 합니다. 구글 클라우드 웹 페이지의 VM 목록에서 SSH 버튼을 클릭하여 접속하는 것은 이미 해 보았습니다. SSH는 Secure Shell의 약자입니다. 보안이 있는 셸이라는 뜻입니다. SSH는 23번 포트로 접속하여 원격 컴퓨터에 있는 셸을 사용할 수 있게 해 줍니다. 보안되지 않은 네트워크에서 암호화된 통신을 통해 원격 컴퓨터에 로그인하여 명령을 내릴 수 있게 해 줍니다. SFTP P \(SSH File Transfer Protocol\)는 파일을 전송할 수 있게 해줍니다. SSH, SFTP, 포트 등에 대해 알고 싶다면 다음을 참조해 보세요.
 
 * [SSH](https://ko.wikipedia.org/wiki/시큐어_셸)
 * [SFTP](https://ko.wikipedia.org/wiki/SSH_파일_전송_프로토콜)
 * [패킷](https://ko.khanacademy.org/computing/computer-science/internet-intro/internet-works-intro/v/the-internet-packet-routers-and-reliability) \(at Khan Academy\)
 * [네트워크 포트](https://opentutorials.org/course/2598/14470) \(at [opentutorials.org](https://www.opentutorials.org/)\)
 
-여기에서는 구글 클라우드 웹 페이지를 통하지 않고 SSH로 접속하는 방법을 알아보려고 합니다. 원격 컴퓨터 관리에 사용하는 SSH \(Secure Shell\)과 파일 전송에 사용되는 SFTP \(SSH File Transfer Protocol\)가 여러분 컴퓨터에 설치되어 있어야 합니다. Linux, macOS 또는 WSL, Cygwin, GitBash 어느 것을 사용하든 터미널을 열고 `ssh` 명령과 `sftp` 명령을 내려보십시오.
+여기에서는 구글 클라우드 웹 페이지를 통하지 않고 SSH로 접속하는 방법을 알아보려고 합니다. 원격 컴퓨터 관리에 사용하는 SSH와과 파일 전송에 사용되는 SFT\)가 여러분 컴퓨터에 설치되어 있어야 합니다. Linux, macOS 또는 WSL, Cygwin, GitBash 어느 것을 사용하든 터미널을 열고 `ssh` 명령과 `sftp` 명령을 내려보십시오.
 
 ```bash
 $ ssh
@@ -44,15 +44,27 @@ $ ssh myname@192.168.0.2
 * [암호화 및 공개키](https://ko.khanacademy.org/computing/computer-science/internet-intro/internet-works-intro/v/the-internet-encryption-and-public-keys) \(at Khan Academy\)
 * [공개키 암호](http://www.parkjonghyuk.net/lecture/2012-1st-lecture/modernCrypto/chap05.pdf)
 
-이런 개념을 잘 몰라도 우선 그냥 따라해 보도록 합시다. 공인인증서의 원리를 몰라도 인터넷 뱅킹들 잘 하시죠? 우선 여러분의 보안키를 생성해야 합니다. 이것은 공개키\(pulbic key\)와 개인키\(private key\) 두 가지로 구성되어 있습니다. 일반적으로 여러분의 홈 디렉토리 아래 `~/.ssh` 디렉토리에 저장해 놓고 사용합니다. 여러분이 접속하려는 로그인 계정의 이름이 `myname`이라면 다음과 같이 명령을 내리고 시키는 대로 암호 등을 입력하세요.
+이런 개념을 잘 몰라도 우선 그냥 따라해 보도록 합시다. 공인인증서의 원리를 몰라도 인터넷 뱅킹들 잘 하시죠? 
+
+###  SSH key-pair 생성하기
+
+우선 여러분의 보안키를 생성해야 합니다. 이것은 공개키\(pulbic key\)와 개인키\(private key\) 두 가지로 구성되어 있습니다. 일반적으로 여러분의 홈 디렉토리 아래 `~/.ssh` 디렉토리에 저장해 놓고 사용합니다. 여러분이 접속하려는 로그인 계정의 이름이 `myname`이라면 다음과 같이 명령을 내리고 시키는 대로 암호 등을 입력하세요.
 
 ```bash
 $ ssh-keygen -t ras -f ~/.ssh/my-ssh-key -C myname
 ```
 
-이 명령이 성공적으로 실행되면 `~/.ssh` 디렉토리에 공개키 `my-ssh-key.pub`와 개인키 `my-ssh-ky` 파일이 생성됩니다. 개인키는 공인인증서 같은 것이니 분실되거나 노출되지 않도록 잘 보관해야 합니다. 공개키는 남에게 주어도 됩니다. 공개키를 구글 클라우드에 등록을 해야 합니다. 다음 메뉴를 찾아가서 `my-ssh-key.pub` 파일의 내용을 복사해서 붙여넣고 저장하면 됩니다.
+이 명령이 성공적으로 실행되면 `~/.ssh` 디렉토리에 공개키 `my-ssh-key.pub`와 개인키 `my-ssh-ky` 파일이 생성됩니다. 개인키는 공인인증서 같은 것이니 분실되거나 노출되지 않도록 잘 보관해야 합니다. 공개키는 남에게 주어도 됩니다. 
+
+참고로 여기서 RSA 공개키 암호 시스템은 큰 숫자를 소인수분해하기 어렵다는 점을 이용해 암호화하는 방법입니다. 공개키는 모두에게 공개하는 것이며 암호화\(암호로 만들기\)를 할 때 사용고 개인키는 비밀로 유지하고 복호화\(암호 풀기\)할 때 사용합니다. RSA 알고리즘은 개인키로 암호화하고 공개키로 복호화할 수도 있습니다.
+
+### 공개키 클라우드에 등록하기
+
+다음으로 공개키를 구글 클라우드에 등록을 해야 합니다.  특정 서버에 등록할 수도 있지만 그냥 자신의 클라우드에 등록해 봅시다. 다음 메뉴를 찾아가서 `my-ssh-key.pub` 파일의 내용을 복사해서 붙여넣고 저장하면 됩니다.
 
 * Compute Engine &gt; Metadata &gt; Add Metadata &gt; SSH Keys
+
+### 개인키 이용하여 접속하기
 
 이제 접속할 때 다음과 같은 형식으로 명령을 내립니다.
 
