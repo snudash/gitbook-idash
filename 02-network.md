@@ -20,9 +20,14 @@
 
 여러분 노트북에 리눅스를 직접 설치했거나 가상머신에 설치했다면 리눅스를 부팅해서 터미널 앱을 열면 셸 명령을 내릴 수 있습니다. macOS에서도 Terminal.app을 열어 셸을 사용하면 됩니다. MS Windows의 경우에 WSL, Cygwin, GitBash 등이 설치되었다면 역시 각각의 터미널 프로그램을 열어 셸을 사용할 수 있습니다.
 
-구글 클라우드에 만든 Compute Engine 가상머신처럼 컴퓨터가 여러분 앞에 있는 것이 아니라면 원격으로 접속해야 합니다. 구글 클라우드 웹 페이지의 VM 목록에서 SSH 버튼을 클릭하여 접속하는 것은 이미 해 보았습니다. SSH는 Secure Shell의 약자입니다. 보안이 있는 셸이라는 뜻입니다. SSH로 접속하면 배시 셸을 사용할 수 있습니다. 여기에서는 구글 클라우드 웹 페이지를 통하지 않고 SSH로 접속하는 방법을 알아보려고 합니다.
+구글 클라우드에 만든 Compute Engine 가상머신처럼 컴퓨터가 여러분 앞에 있는 것이 아니라면 원격으로 접속해야 합니다. 구글 클라우드 웹 페이지의 VM 목록에서 SSH 버튼을 클릭하여 접속하는 것은 이미 해 보았습니다. SSH는 Secure Shell의 약자입니다. 보안이 있는 셸이라는 뜻입니다. SSH는 23번 포터로 접속하여 원격 컴퓨터에 있는 셸을 사용할 수 있게 해 줍니다. SSH, SFTP, 포트 등에 대해 알고 싶다면 다음을 참조해 보세요.
 
-원격 컴퓨터 관리에 사용하는 SSH \(Secure Shell\)과 파일 전송에 사용되는 SFTP \(SSH File Transfer Protocol\)가 여러분 컴퓨터에 설치되어 있어야 합니다. Linux, macOS 또는 WSL, Cygwin, GitBash 어느 것을 사용하든 터미널을 열고 `ssh` 명령과 `sftp` 명령을 내려보십시오.
+- [SSH](https://ko.wikipedia.org/wiki/시큐어_셸)
+- [SFTP](https://ko.wikipedia.org/wiki/SSH_파일_전송_프로토콜)
+- [패킷](https://ko.khanacademy.org/computing/computer-science/internet-intro/internet-works-intro/v/the-internet-packet-routers-and-reliability) (at Khan Academy)
+- [네트워크 포트](https://opentutorials.org/course/2598/14470) (at opentutorials)
+
+여기에서는 구글 클라우드 웹 페이지를 통하지 않고 SSH로 접속하는 방법을 알아보려고 합니다. 원격 컴퓨터 관리에 사용하는 SSH \(Secure Shell\)과 파일 전송에 사용되는 SFTP \(SSH File Transfer Protocol\)가 여러분 컴퓨터에 설치되어 있어야 합니다. Linux, macOS 또는 WSL, Cygwin, GitBash 어느 것을 사용하든 터미널을 열고 `ssh` 명령과 `sftp` 명령을 내려보십시오.
 
 ```bash
 $ ssh
@@ -34,7 +39,12 @@ $ ssh
 $ ssh myname@192.168.0.2
 ```
 
-여기서 IP 주소 부분에는 여러분의 구글 클라우드 VM 목록에서 외부 IP \(External IP\)를 지정하면 됩니다. 하지만 접속하려고 해보면 오류가 날 것입니다. 보안을 위해 SSH Key를 등록해서 사용하도록 하고 있기 때문입니다. 공개키 암호 시스템이라는 것을 이용합니다. 그 개념은 잠시 접어두고 그냥 따라해 보도록 합시다.
+여기서 IP 주소 부분에는 여러분의 구글 클라우드 VM 목록에서 외부 IP \(External IP\)를 지정하면 됩니다. 하지만 접속하려고 해보면 오류가 날 것입니다. 보안을 위해 SSH Key를 등록해서 사용하도록 하고 있기 때문입니다. 공개키 암호 시스템이라는 것을 이용합니다. 궁금하신 분들은 다음 사이트를 참조하세요.
+
+* [암호화 및 공개키](https://ko.khanacademy.org/computing/computer-science/internet-intro/internet-works-intro/v/the-internet-encryption-and-public-keys) (at Khan Academy)
+* [공개키 암호](http://www.parkjonghyuk.net/lecture/2012-1st-lecture/modernCrypto/chap05.pdf)
+
+그 개념은 잠시 접어두고 그냥 따라해 보도록 합시다.
 
 우선 여러분의 보안키를 생성해야 합니다. 이것은 공개키\(pulbic key\)와 개인키\(private key\) 두 가지로 구성되어 있습니다. 일반적으로 여러분의 홈 디렉토리 아래 `~/.ssh` 디렉토리에 저장해 놓고 사용합니다. 여러분이 접속하려는 로그인 계정의 이름이 `myname`이라면 다음과 같이 명령을 내리고 시키는 대로 암호 등을 입력하세요.
 
