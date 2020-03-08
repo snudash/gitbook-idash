@@ -44,9 +44,7 @@ $ ssh myname@192.168.0.2
 * [암호화 및 공개키](https://ko.khanacademy.org/computing/computer-science/internet-intro/internet-works-intro/v/the-internet-encryption-and-public-keys) \(at Khan Academy\)
 * [공개키 암호](http://www.parkjonghyuk.net/lecture/2012-1st-lecture/modernCrypto/chap05.pdf)
 
-그 개념은 잠시 접어두고 그냥 따라해 보도록 합시다.
-
-우선 여러분의 보안키를 생성해야 합니다. 이것은 공개키\(pulbic key\)와 개인키\(private key\) 두 가지로 구성되어 있습니다. 일반적으로 여러분의 홈 디렉토리 아래 `~/.ssh` 디렉토리에 저장해 놓고 사용합니다. 여러분이 접속하려는 로그인 계정의 이름이 `myname`이라면 다음과 같이 명령을 내리고 시키는 대로 암호 등을 입력하세요.
+이런 개념을 잘 몰라도 우선 그냥 따라해 보도록 합시다. 공인인증서의 원리를 몰라도 인터넷 뱅킹들 잘 하시죠? 우선 여러분의 보안키를 생성해야 합니다. 이것은 공개키\(pulbic key\)와 개인키\(private key\) 두 가지로 구성되어 있습니다. 일반적으로 여러분의 홈 디렉토리 아래 `~/.ssh` 디렉토리에 저장해 놓고 사용합니다. 여러분이 접속하려는 로그인 계정의 이름이 `myname`이라면 다음과 같이 명령을 내리고 시키는 대로 암호 등을 입력하세요.
 
 ```bash
 $ ssh-keygen -t ras -f ~/.ssh/my-ssh-key -C myname
