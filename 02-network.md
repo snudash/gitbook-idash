@@ -24,13 +24,13 @@
 
 원격 컴퓨터 관리에 사용하는 SSH \(Secure Shell\)과 파일 전송에 사용되는 SFTP \(SSH File Transfer Protocol\)가 여러분 컴퓨터에 설치되어 있어야 합니다. Linux, macOS 또는 WSL, Cygwin, GitBash 어느 것을 사용하든 터미널을 열고 `ssh` 명령과 `sftp` 명령을 내려보십시오.
 
-```text
+```bash
 $ ssh
 ```
 
 그런 명령이 없다는 메시지가 나오면 설치해야 합니다. Linux, WSL에서는 패키지 관리자를 이용해 설치하세요. Cygwin에도 기본으로는 설치가 안 되어 있을 수도 있습니다. 설치가 되어 있다면 접속할 때는 원격 컴퓨터의 주소와 로그인하려는 계정 아이디를 명시하면 됩니다. 예를 들어, 아이피가 `192.168.0.2`이고 계정이름이 `myname`이라면 다음과 같이 명령을 내립니다.
 
-```text
+```bash
 $ ssh myname@192.168.0.2
 ```
 
@@ -38,7 +38,7 @@ $ ssh myname@192.168.0.2
 
 우선 여러분의 보안키를 생성해야 합니다. 이것은 공개키\(pulbic key\)와 개인키\(private key\) 두 가지로 구성되어 있습니다. 일반적으로 여러분의 홈 디렉토리 아래 `~/.ssh` 디렉토리에 저장해 놓고 사용합니다. 여러분이 접속하려는 로그인 계정의 이름이 `myname`이라면 다음과 같이 명령을 내리고 시키는 대로 암호 등을 입력하세요.
 
-```text
+```bash
 $ ssh-keygen -t ras -f ~/.ssh/my-ssh-key -C myname
 ```
 
@@ -48,13 +48,13 @@ $ ssh-keygen -t ras -f ~/.ssh/my-ssh-key -C myname
 
 이제 접속할 때 다음과 같은 형식으로 명령을 내립니다.
 
-```text
+```bash
 $ ssh -i ~/.ssh/my-ssh-key myname@192.168.0.2
 ```
 
 서버에 파일을 업로드하거나 서버에 있는 파일을 다운로드하고 싶을 때에는 `sftp` 명령을 이용하세요. 사용 방법은 동일합니다.
 
-```text
+```bash
 $ sftp -i ~/.ssh/my-ssh-key myname@192.168.0.2
 ```
 
