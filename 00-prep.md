@@ -24,7 +24,7 @@
 * [서버 프로그램](https://ko.wikipedia.org/wiki/서버)
 * [서버 프로그래밍](https://opentutorials.org/course/669)
 * [클라이언트 프로그램](https://ko.wikipedia.org/wiki/클라이언트_%28컴퓨팅%29)
-* [클라이턴트 프로그래밍](https://opentutorials.org/course/668)
+* [클라이언트 프로그래밍](https://opentutorials.org/course/668)
 
 ### Web Standards
 
