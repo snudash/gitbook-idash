@@ -28,7 +28,7 @@
 * [Virtual Machine](https://ko.wikipedia.org/wiki/가상_머신)
 * [VirtualBox](https://www.virtualbox.org/)
 * [가상화와 클라우드](https://www.redhat.com/ko/topics/cloud-computing/cloud-vs-virtualization)
-- [클라우드 컴퓨팅](https://ko.wikipedia.org/wiki/클라우드_컴퓨팅)
+* [클라우드 컴퓨팅](https://ko.wikipedia.org/wiki/클라우드_컴퓨팅)
 
 여기서 가상화 이야기를 왜 할까요? 최근의 IT 분야에서 가상화는 가장 중요한 기술 중의 하나이고 클라우드 컴퓨팅을 가능하게 하는 것이 가상화 기술입니다. 우리 수업에서는 그런 거시적인 수준에서가 아니라 아마도 여러분 대부분이 Windows를 사용하고 있는 상황에서 리눅스를 사용해 보려는 목적에서 가상화를 이야기하는 것입니다.
 
