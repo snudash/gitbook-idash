@@ -11,21 +11,6 @@
 
 ## 참고자료
 
-### Web Technology
-
-* [웹](https://ko.wikipedia.org/wiki/월드_와이드_웹)
-* [웹 어플리케이션](https://ko.wikipedia.org/wiki/웹_애플리케이션)
-* [웹 기술](https://developer.mozilla.org/ko/docs/Web)
-* [HTML \(HyperText Markup Language\)](https://ko.wikipedia.org/wiki/HTML)
-* [CSS \(Cascading Style Sheet\)](https://ko.wikipedia.org/wiki/종속형_시트)
-* [JavaScript](https://ko.wikipedia.org/wiki/자바스크립트)
-* [SVG \(Scalable Vector Graphics\)](https://ko.wikipedia.org/wiki/스케일러블_벡터_그래픽스)
-* [클라이언트-서버 모델](https://ko.wikipedia.org/wiki/클라이언트_서버_모델)
-* [서버 프로그램](https://ko.wikipedia.org/wiki/서버)
-* [서버 프로그래밍](https://opentutorials.org/course/669)
-* [클라이언트 프로그램](https://ko.wikipedia.org/wiki/클라이언트_%28컴퓨팅%29)
-* [클라이턴트 프로그래밍](https://opentutorials.org/course/668)
-
 ### Web Standards
 
 * Google Chrome 설치. 구글 크롬을 사용하는 이유? \(웹 표준\)
