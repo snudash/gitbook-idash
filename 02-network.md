@@ -51,7 +51,7 @@ $ ssh myname@192.168.0.2
 우선 여러분의 보안키를 생성해야 합니다. 이것은 공개키\(pulbic key\)와 개인키\(private key\) 두 가지로 구성되어 있습니다. 일반적으로 여러분의 홈 디렉토리 아래 `~/.ssh` 디렉토리에 저장해 놓고 사용합니다. 여러분이 접속하려는 로그인 계정의 이름이 `myname`이라면 다음과 같이 명령을 내리고 시키는 대로 암호 등을 입력하세요.
 
 ```bash
-$ ssh-keygen -t ras -f ~/.ssh/my-ssh-key -C myname
+$ ssh-keygen -t rsa -f ~/.ssh/my-ssh-key -C myname
 ```
 
 이 명령이 성공적으로 실행되면 `~/.ssh` 디렉토리에 공개키 `my-ssh-key.pub`와 개인키 `my-ssh-ky` 파일이 생성됩니다. 개인키는 공인인증서 같은 것이니 분실되거나 노출되지 않도록 잘 보관해야 합니다. 공개키는 남에게 주어도 됩니다. 
